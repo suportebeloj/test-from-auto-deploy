@@ -17,3 +17,10 @@ def test_calc_sub():
     core = ArithCore()
     for v in mockData:
         assert core.subtraction(v[0], v[1]) == v[2]
+
+def test_calc_mult():
+    mockData = [(1,2,2), (3,3,9), (2,2,4), (10,3,30)]
+
+    core = ArithCore()
+    for v in mockData:
+        assert core.multiplication(v[0], v[1]) == v[2]
