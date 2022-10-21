@@ -1,3 +1,4 @@
+import os
 import uvicorn
 from fastapi import FastAPI
 from internal.ports.app import APIInterface
@@ -73,8 +74,8 @@ class Adapter(HTTPAPIInterface):
 
     def run(self, host: str = None, port: int = None):
         if not host:
-            host = "0.0.0.0"
+            host = os.getenv("HTTP_API_HOST", "0.0.0.0")
         if not port:
-            port = 8080
+            port = int(os.getenv("HTTP_API_PORT", 8000))
 
         uvicorn.run(self.server, host=host, port=port)
