@@ -51,3 +51,16 @@ def test_get_multiplication():
 
     for v in mockData:
         assert app_adapter.GetMultiplication(v.A, v.B) == v.Expected
+
+
+def test_get_division():
+
+    mockData = [
+        MockData(5, 2, 2.5),
+        MockData(5, 3, 5/3),
+        MockData(100, 800, 0.125),
+        MockData(1234, 29022, 1234/29022),
+    ]
+
+    for v in mockData:
+        assert app_adapter.GetDivision(v.A, v.B) == v.Expected
