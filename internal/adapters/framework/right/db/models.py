@@ -4,6 +4,6 @@ from sqlmodel import Field, SQLModel
 
 
 class OperationHistory(SQLModel, table=True):
-    id: Field(default=None, primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     answer: Optional[int]
     operation: str
