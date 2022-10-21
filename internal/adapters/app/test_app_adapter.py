@@ -39,3 +39,15 @@ def test_get_subtraction():
     for v in mockData:
         assert app_adapter.GetSubtraction(v.A, v.B) == v.Expected
  
+
+def test_get_multiplication():
+
+    mockData = [
+        MockData(5, 2, 10),
+        MockData(5, 3, 15),
+        MockData(100, 800, 80000),
+        MockData(1234, 29022, 35813148),
+    ]
+
+    for v in mockData:
+        assert app_adapter.GetMultiplication(v.A, v.B) == v.Expected
